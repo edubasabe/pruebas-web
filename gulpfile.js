@@ -74,16 +74,13 @@ gulp.task('clean:dist', function() {
 });
 
 //-- Run Sequence
-gulp.task('build', function (callback) {
+gulp.task('build', function () {
   runSequence('clean:dist',
-    ['sass', 'useref', 'images', 'fonts'],
-    callback
+    ['sass', 'useref', 'images', 'fonts']
   );
 });
 
 //-- Default Task
-gulp.task('default', function (callback) {
-  runSequence(['sass','browserSync', 'watch'],
-    callback
-  );
+gulp.task('default', function () {
+  runSequence(['sass','browserSync', 'watch']);
 });
